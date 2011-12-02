@@ -1,0 +1,10 @@
+<h1>Login pls</h1>
+<%= form_tag({:controller => :user, :action => :authorizate}, :method => :post) do%>
+<%# TODO change method on post%>
+	<%= label_tag(:username, "Login") %>
+	<%= text_field_tag(:username) %>
+	<%= label_tag(:password, "Password") %>
+	<%= password_field_tag(:password) %>
+	<%= submit_tag("Login") %>
+<% end %>
+	

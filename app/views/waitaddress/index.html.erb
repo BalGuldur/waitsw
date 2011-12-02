@@ -1,0 +1,37 @@
+<table>
+	<tr>
+		<th>Address</th>
+		<th>Ipaddress</th>
+		<th>Creator</th>
+		<th>Description</th>
+	</tr>
+	<% @waitaddresses.each do |waitaddress| %>
+		<% @bgcolor="" %>
+		<% @bgcolor="lightgreen" if waitaddress.status=="online" %>
+		<tr bgcolor="<%= @bgcolor %>">
+			<td><%= waitaddress.address %></td>
+			<td><%= waitaddress.ipaddress %></td>
+			<td><%= waitaddress.user %></td>
+			<td><%= waitaddress.descr %></td>
+			<td><%= link_to 'destroy', "waitaddress/#{waitaddress.id}", :method => :delete %></td>
+		</tr>
+	<% end %>
+	<tr>
+	<%= form_tag "iprange/createadd", :method => :get do %>
+		<td><%= text_field_tag(:address) %></td>
+		<td><%= text_field_tag(:iprange) %></td>
+		<td></td>
+		<td><%= text_field_tag(:descr) %></td>
+	</tr>
+	<tr>
+		<td><div><%= submit_tag("Create address") %></div></td>
+	</tr>
+	<tr>
+		<td><br /><div>U can use range... example 192.168.0.1-10</div></td>
+	</tr>
+	<% end %>
+</table>
+<br />
+<br />
+<br />
+<div><%= link_to 'Configure u account settings', "user/login"%></div>

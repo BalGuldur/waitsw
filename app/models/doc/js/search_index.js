@@ -1,0 +1,1 @@
+var search_data = {"index":{"searchIndex":["waitaddress","ping()"],"longSearchIndex":["waitaddress","waitaddress#ping()"],"info":[["Waitaddress","","Waitaddress.html","",""],["ping","Waitaddress","Waitaddress.html#method-i-ping","()",""]]}}
